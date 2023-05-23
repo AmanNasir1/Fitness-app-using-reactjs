@@ -15,6 +15,7 @@ const LeftArrow = () => {
   );
 };
 
+
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
@@ -27,14 +28,9 @@ const RightArrow = () => {
 
 const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => {
   return (
-    <ScrollMenu>
+    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item) => (
-        <Box
-          key={item.id || item}
-          itemId={item.id || item}
-          title={item.id || item}
-          m="0 40px"
-        >
+        <Box key={item.id || item} title={item.id || item} m="0 40px">
           <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
         </Box>
       ))}
