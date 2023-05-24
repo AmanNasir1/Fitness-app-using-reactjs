@@ -15,7 +15,6 @@ const LeftArrow = () => {
   );
 };
 
-
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
